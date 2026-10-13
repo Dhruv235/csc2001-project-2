@@ -1,12 +1,13 @@
 import java.util.Arrays;
 
 public class ArrayStack<T> {
+    private static final int INITIAL_CAPACITY = 10;
 
     private Object[] array;
     private int size;
 
     private ArrayStack() {
-        this.array = new Object[10];
+        this.array = new Object[INITIAL_CAPACITY];
         this.size = 0;
     }
 

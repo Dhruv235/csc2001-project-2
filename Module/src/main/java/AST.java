@@ -1,2 +1,3 @@
-public interface AST{
+public interface AST {
+    double eval();
 }
