@@ -1,0 +1,61 @@
+PROJECT 2 PROCESS JOURNAL
+
+Note: I reconstructed this journal after completing the project because I forgot to include it with my original submission. The dates reflect my best recollection of the work.
+
+Date: Wednesday, Oct 7, 2026
+Task: Project Setup & ArrayStack
+Details:
+- Reviewed the project requirements and the calculator’s main components.
+- Worked on the generic ArrayStack with push(), pop(), peek(), isEmpty(), and size().
+- Used an Object[] to store elements and a size variable to track the number of items.
+- Reviewed how the array doubles when full and how pop() clears the removed item’s reference.
+- Checked that pop() and peek() throw IndexOutOfBoundsException when the stack is empty.
+
+Date: Thursday, Oct 8, 2026
+Task: AST Structure & Code Cleanup
+Details:
+- Worked on the AST interface and the NumNode and BinopNode records.
+- Reviewed how NumNode stores a number and BinopNode stores an operator and two child nodes.
+- Traced the tree structure for 2 * (3 + 4).
+- Fixed leftover template records in IntelliJ.
+- Resolved a Char versus char mistake and reviewed the correct Java type names.
+
+Date: Friday, Oct 9, 2026
+Task: Postfix Parser
+Details:
+- Worked on parsePostfix() to turn whitespace-separated tokens into an expression tree.
+- Reviewed helper methods for identifying operators, parsing numbers, and applying operators.
+- Checked that applying an operator pops the right operand first and the left operand second.
+- Fixed a missing return in parsePostfix().
+- Checked the required error messages: “empty input,” “invalid token,” “insufficient operands,” and “too many operands.”
+- Used subtraction examples to check that operand order was correct.
+
+Date: Saturday, Oct 10, 2026
+Task: Infix Parser
+Details:
+- Worked on parseInfix() using separate stacks for expressions and operators.
+- Reviewed precedence rules for addition, subtraction, multiplication, division, and exponentiation.
+- Worked through shouldApplyFirst() to understand when a waiting operator should be applied.
+- Checked that subtraction is left-associative and exponentiation is right-associative.
+- Reviewed parentheses handling and the “mismatched open paren” and “mismatched close paren” errors.
+- Traced 2 * ( 3 + 4 ) through both stacks to understand how the final tree is built.
+
+Date: Sunday, Oct 11, 2026
+Task: Evaluation & Unit Tests
+Details:
+- Worked on eval() for NumNode and BinopNode.
+- Reviewed how BinopNode recursively evaluates its children before applying its operator.
+- Checked the five supported operators, including Math.pow() for exponentiation.
+- Worked on JUnit 5 tests for the stack, parsers, and evaluator.
+- Checked tree structures using assertEquals() and error handling using assertThrows().
+- Verified that error messages matched the required wording.
+
+Date: Monday, Oct 12, 2026
+Task: Final Debugging & Coverage
+Details:
+- Ran the test suite in IntelliJ and reviewed the implementation.
+- Checked stack resizing, operand order, precedence, parentheses, and invalid input.
+- Reviewed the test that directly constructs a BinopNode with an unsupported operator to check the evaluator’s error branch.
+- Used JaCoCo to check line and branch coverage.
+- Confirmed that all 51 tests passed with 100% line and branch coverage.
+- Finished reviewing how parsing and evaluation work together to calculate the final answer.
